@@ -58,3 +58,10 @@
 .demo-network-panel p { max-width: 700px; color: var(--muted); line-height: 1.65; }
 .demo-network-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 12px; }
 .demo-mode-label { color: var(--muted); font: 9px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+
+/* Connected workflow controls */
+.management-row{width:100%;font:inherit;color:inherit;text-align:left;cursor:pointer;background:none;border:0}
+.management-row:hover{background:#21141b}
+.inline-form{padding:20px;margin-bottom:15px}
+.inline-form .btn{margin-top:15px}
+.inline-form-error{display:flex;gap:7px;align-items:center;color:#ff9aab;font-size:10px;margin:10px 0}
