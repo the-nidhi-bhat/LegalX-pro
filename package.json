@@ -8,7 +8,8 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node scripts/test-demo.mjs && node scripts/test-rbac.mjs"
+    "test": "node scripts/test-demo.mjs && node scripts/test-rbac.mjs && node scripts/test-resilience.mjs",
+    "rehearse:demo": "node scripts/rehearse-demo.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

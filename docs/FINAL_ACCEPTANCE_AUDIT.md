@@ -130,3 +130,31 @@ Start at onboarding, choose Agreement Owner, open the dashboard, show the shared
 ## Final recommendation
 
 **CONDITIONAL PASS — READY ONLY WITH DISCLOSED LIMITATIONS.** Suitable for a hackathon demonstration of the product concept and role-aware trust workflow. Not ready for production agreements, personal data, real payments, legal reliance, or blockchain execution until the blocked integrations and backend enforcement are implemented and tested.
+
+## Judge Mode and recovery addition
+
+The `/demo` route is now a dedicated **Judge Mode / Demo Control Center** rather than falling through to the application shell. It provides an obvious **Start guided demo** action, a five-step progress indicator, next/previous controls, pause/resume, exit, direct scenario jumping, role switches, and explicit `supported`, `simulated`, and `blocked` labels. The walkthrough copy never claims a live AI, API, upload, export, wallet, or transaction completed.
+
+Guided progress is persisted under local-only `legalx:guided-*` keys. Refreshing the page preserves the current step. When a judge navigates into the application during an active walkthrough, a recovery banner offers a safe return to the Demo Control Center. Reset requires confirmation and removes only `legalx:` demo keys; it does not call `localStorage.clear()` and never touches production data.
+
+The control center includes an honest failure-rehearsal panel. Judges can simulate offline mode or slow-network mode. Offline mode displays a danger banner and states that no live operation is running. Slow mode states that operations remain pending until confirmation and that no success is shown. The static prototype has no external API request, session cookie, upload, AI call, wallet connection, or transaction to falsely mark successful. Expired live sessions are **not applicable to this disconnected demo**; the UI explicitly identifies the state as a local browser demo with no production session.
+
+## Observability addition
+
+Activity rows now include the active demo actor, Acme Digital workspace, version `v1.2`, and `verified`/`recorded` status. Financial activity details are masked for roles without financial visibility. The activity surface remains seeded and local; it is not a durable audit log.
+
+## Three-run final rehearsal
+
+The reusable `npm run rehearse:demo` harness was run three times from a clean local-demo assumption. Each run verified the five-step guided route sequence, route manifest membership, HTTP availability of each path, persona switches, preserved-step contract, and final simulated/blocked state.
+
+| Run | Start (UTC) | Finish (UTC) | Duration | Personas | Errors | Manual intervention |
+| --- | --- | --- | ---: | --- | --- | --- |
+| 1 | 2026-11-06T16:50:00.898Z | 2026-11-06T16:50:01.026Z | 0.128s | Owner → Legal Reviewer → Technical Auditor | None | No |
+| 2 | 2026-11-06T16:50:01.026Z | 2026-11-06T16:50:01.048Z | 0.022s | Owner → Legal Reviewer → Technical Auditor | None | No |
+| 3 | 2026-11-06T16:50:01.048Z | 2026-11-06T16:50:01.065Z | 0.017s | Owner → Legal Reviewer → Technical Auditor | None | No |
+
+The full machine-readable record is [docs/rehearsals/latest.json](rehearsals/latest.json). This is a route/state-machine rehearsal, not a substitute for browser click E2E or live integrations. The final agreement state in all three runs was: **verified demo state; parity and execution integrations remain simulated/blocked**.
+
+## Final addition verdict
+
+**PASS FOR JUDGE EXPERIENCE AND DEMO RECOVERY.** Judge Mode, local progress recovery, safe reset confirmation, offline/slow-network rehearsal, failure honesty, activity context, and three-run repeatability are implemented. Live session expiry, API retry, upload recovery, AI downtime, wallet disconnect, and transaction failure remain explicitly unavailable because those integrations are not connected. Feature development stops here; only defects, security issues, reliability issues, or release blockers should be addressed next.

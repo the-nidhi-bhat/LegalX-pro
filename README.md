@@ -84,6 +84,7 @@ Copy `.env.example` only when wiring a real deployment. No secret is required fo
 - [Product roadmap](docs/PRODUCT_ROADMAP.md)
 - [RBAC and workspace authorization](docs/RBAC.md)
 - [Final acceptance audit](docs/FINAL_ACCEPTANCE_AUDIT.md)
+- [Guided demo rehearsal record](docs/rehearsals/latest.json)
 
 ## Licensing
 

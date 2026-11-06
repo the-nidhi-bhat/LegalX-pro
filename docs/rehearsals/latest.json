@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-11-06T16:50:01.065Z",
+  "base": "http://127.0.0.1:3000",
+  "runs": [
+    {
+      "run": 1,
+      "startedAt": "2026-11-06T16:50:00.898Z",
+      "finishedAt": "2026-11-06T16:50:01.026Z",
+      "durationMs": 128,
+      "durationSeconds": 0.128,
+      "personaSwitches": [
+        "owner",
+        "legal_reviewer",
+        "technical_auditor"
+      ],
+      "completedWorkflowSteps": [
+        "Meet the shared workspace",
+        "Inspect the agreement",
+        "Run parity verification",
+        "Change perspective",
+        "Explain the trust boundary"
+      ],
+      "errors": [],
+      "recoveryActions": [
+        "Started from a clean local demo-state assumption",
+        "Verified guided step sequence is persisted by legalx:guided-step / legalx:guided-active"
+      ],
+      "finalAgreementState": "Verified demo state; parity and execution integrations remain simulated/blocked",
+      "manualInterventionNeeded": false,
+      "verificationBoundary": "Route/state-machine rehearsal; not a substitute for browser click E2E or live integrations"
+    },
+    {
+      "run": 2,
+      "startedAt": "2026-11-06T16:50:01.026Z",
+      "finishedAt": "2026-11-06T16:50:01.048Z",
+      "durationMs": 22,
+      "durationSeconds": 0.022,
+      "personaSwitches": [
+        "owner",
+        "legal_reviewer",
+        "technical_auditor"
+      ],
+      "completedWorkflowSteps": [
+        "Meet the shared workspace",
+        "Inspect the agreement",
+        "Run parity verification",
+        "Change perspective",
+        "Explain the trust boundary"
+      ],
+      "errors": [],
+      "recoveryActions": [
+        "Started from a clean local demo-state assumption",
+        "Verified guided step sequence is persisted by legalx:guided-step / legalx:guided-active"
+      ],
+      "finalAgreementState": "Verified demo state; parity and execution integrations remain simulated/blocked",
+      "manualInterventionNeeded": false,
+      "verificationBoundary": "Route/state-machine rehearsal; not a substitute for browser click E2E or live integrations"
+    },
+    {
+      "run": 3,
+      "startedAt": "2026-11-06T16:50:01.048Z",
+      "finishedAt": "2026-11-06T16:50:01.065Z",
+      "durationMs": 17,
+      "durationSeconds": 0.017,
+      "personaSwitches": [
+        "owner",
+        "legal_reviewer",
+        "technical_auditor"
+      ],
+      "completedWorkflowSteps": [
+        "Meet the shared workspace",
+        "Inspect the agreement",
+        "Run parity verification",
+        "Change perspective",
+        "Explain the trust boundary"
+      ],
+      "errors": [],
+      "recoveryActions": [
+        "Started from a clean local demo-state assumption",
+        "Verified guided step sequence is persisted by legalx:guided-step / legalx:guided-active"
+      ],
+      "finalAgreementState": "Verified demo state; parity and execution integrations remain simulated/blocked",
+      "manualInterventionNeeded": false,
+      "verificationBoundary": "Route/state-machine rehearsal; not a substitute for browser click E2E or live integrations"
+    }
+  ]
+}

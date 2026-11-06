@@ -67,3 +67,12 @@
 - [x] Added regression assertions for unknown-route denial, admin detail denial, auditor settings denial, protected detail access, and financial boundaries.
 - [x] Created `docs/FINAL_ACCEPTANCE_AUDIT.md` with exact command evidence, feature statuses, defects, repairs, integration blockers, security findings, and conditional release recommendation.
 - [x] Reviewed README Mermaid trust-flow and role-access diagrams and linked the final audit from the documentation index.
+
+## 13. Judge Mode, demo resilience, and final stop rule
+- [x] `/demo` is a dedicated Judge Mode / Demo Control Center with an obvious Start guided demo action, structured five-step walkthrough, visible progress, next/previous, pause/resume, exit, and direct scenario jumping.
+- [x] Guided progress persists in local-only `legalx:guided-*` state; refresh and accidental application navigation preserve the current step and expose a safe return to the Demo Control Center.
+- [x] Reset requires explicit confirmation, removes only local `legalx:` demo keys, and explicitly states that production data is not connected or touched.
+- [x] Offline and slow-network rehearsal modes are available from Judge Mode; offline shows a failure banner and slow mode keeps operations pending without showing success.
+- [x] Activity evidence includes actor, workspace, agreement version, timestamp, and verified/recorded status with financial masking for restricted roles.
+- [x] The three-run rehearsal harness recorded start/finish timestamps, durations, persona switches, workflow steps, errors, recovery actions, final state, and manual-intervention status in `docs/rehearsals/latest.json`.
+- [x] Feature development stops after this addition; only defects, security, reliability, or release-blocking fixes remain in scope.
