@@ -139,3 +139,11 @@ The diagram reflects the product boundary: parity and hashing create technical e
 ![Profile and account safety surface](docs/screenshots/profile.png)
 
 ![Mobile transaction view](docs/screenshots/transactions-mobile.png)
+
+
+
+## Role-aware workspaces and access control
+
+LEGALX now uses one unified application shell with five permission-aware identities: Agreement Owner, Freelancer / Contractor, Legal Reviewer, Organization Admin, and Technical Auditor. The active identity changes the dashboard metrics, sidebar navigation, permitted actions, financial visibility, and protected route behavior while keeping every role on the same seeded Acme Digital agreement lifecycle.
+
+The demo role switcher is intentionally local-only and clearly labeled. It is useful for judging the connected workflow, not a replacement for production authentication. Every protected route is checked through the centralized policy before its component mounts; unauthorized attempts show a 403-style state. API and database enforcement patterns are documented separately in [RBAC.md](docs/RBAC.md), with server helpers in `server/authorization.ts` and executable negative tests in `scripts/test-rbac.mjs`.

@@ -48,3 +48,13 @@
 - [x] Final desktop and mobile screenshots were captured for transactions, notifications, profile, parity, and mobile transactions.
 
 - [x] Profile edit mode updates name/role locally and confirms save; settings tabs switch active context, native toggles work, save/reset actions respond, and profile/settings were visually rechecked.
+
+
+## 11. Role-based application and access control
+- [x] One unified application supports Agreement Owner, Freelancer / Contractor, Legal Reviewer, Organization Admin, and Technical Auditor identities with distinct dashboards, navigation, widgets, actions, and permissions.
+- [x] Users can switch among seeded role identities in the active Acme Digital workspace; the switch recalculates navigation, dashboard context, route access, financial masking, and action availability without duplicating the application.
+- [x] Frontend route guards deny protected views before their page components mount and show a clear 403 state instead of relying only on hidden navigation.
+- [x] Server authorization helpers enforce workspace membership, permission checks, financial visibility, and agreement reads; database RLS patterns are documented for tenant-owned tables and append-only audit evidence.
+- [x] Realistic local-only demo accounts exist for owner@legalx.demo, freelancer@legalx.demo, lawyer@legalx.demo, admin@legalx.demo, and auditor@legalx.demo without production credentials.
+- [x] Role-aware onboarding explains the shared agreement lifecycle and selects the initial responsibility before entering the workspace.
+- [x] RBAC regression tests cover allowed actions, denied actions, admin separation from legal/escrow authority, auditor read-only boundaries, and cross-workspace API policy expectations.
