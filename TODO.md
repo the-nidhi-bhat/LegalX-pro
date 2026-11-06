@@ -19,4 +19,4 @@
 - [x] The seeded flow is demonstrable in under two minutes and responsive across desktop and mobile layouts with keyboard-friendly controls and visible trust signals.
 
 ## 7. GitHub delivery
-- [ ] Push the finished source to the authorized `nidzzgotnochill/legal` repository.
+- [x] Push the finished source to the authorized `nidzzgotnochill/legal` repository.
