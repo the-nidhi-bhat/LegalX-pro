@@ -46,3 +46,5 @@
 - [x] Team invite action stages a visible local invite state.
 - [x] README includes a Mermaid trust-flow architecture diagram and explains implemented versus simulated boundaries.
 - [x] Final desktop and mobile screenshots were captured for transactions, notifications, profile, parity, and mobile transactions.
+
+- [x] Profile edit mode updates name/role locally and confirms save; settings tabs switch active context, native toggles work, save/reset actions respond, and profile/settings were visually rechecked.
