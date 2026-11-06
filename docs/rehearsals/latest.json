@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-06T17:27:11.347Z",
+  "generatedAt": "2026-11-06T17:33:09.573Z",
   "base": "http://127.0.0.1:3000",
   "runs": [
     {
       "run": 1,
-      "startedAt": "2026-11-06T17:27:11.112Z",
-      "finishedAt": "2026-11-06T17:27:11.305Z",
-      "durationMs": 193,
-      "durationSeconds": 0.193,
+      "startedAt": "2026-11-06T17:33:09.446Z",
+      "finishedAt": "2026-11-06T17:33:09.546Z",
+      "durationMs": 100,
+      "durationSeconds": 0.1,
       "personaSwitches": [
         "owner",
         "legal_reviewer",
@@ -31,10 +31,10 @@
     },
     {
       "run": 2,
-      "startedAt": "2026-11-06T17:27:11.305Z",
-      "finishedAt": "2026-11-06T17:27:11.329Z",
-      "durationMs": 24,
-      "durationSeconds": 0.024,
+      "startedAt": "2026-11-06T17:33:09.547Z",
+      "finishedAt": "2026-11-06T17:33:09.560Z",
+      "durationMs": 13,
+      "durationSeconds": 0.013,
       "personaSwitches": [
         "owner",
         "legal_reviewer",
@@ -58,10 +58,10 @@
     },
     {
       "run": 3,
-      "startedAt": "2026-11-06T17:27:11.329Z",
-      "finishedAt": "2026-11-06T17:27:11.346Z",
-      "durationMs": 17,
-      "durationSeconds": 0.017,
+      "startedAt": "2026-11-06T17:33:09.561Z",
+      "finishedAt": "2026-11-06T17:33:09.572Z",
+      "durationMs": 11,
+      "durationSeconds": 0.011,
       "personaSwitches": [
         "owner",
         "legal_reviewer",

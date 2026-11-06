@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-11-06T17:33:24.066Z",
+  "base": "http://127.0.0.1:3000",
+  "startedAt": "2026-11-06T17:33:23.845Z",
+  "finishedAt": "2026-11-06T17:33:24.066Z",
+  "durationMs": 221,
+  "durationSeconds": 0.221,
+  "judgeChecklist": {
+    "dashboardPages": {
+      "declared": 30,
+      "checked": 30,
+      "passed": 30,
+      "failed": 0
+    },
+    "roles": {
+      "supported": 5,
+      "checked": 5,
+      "roles": [
+        {
+          "role": "owner",
+          "declared": true,
+          "dashboardText": true
+        },
+        {
+          "role": "freelancer",
+          "declared": true,
+          "dashboardText": true
+        },
+        {
+          "role": "legal_reviewer",
+          "declared": true,
+          "dashboardText": true
+        },
+        {
+          "role": "org_admin",
+          "declared": true,
+          "dashboardText": true
+        },
+        {
+          "role": "technical_auditor",
+          "declared": true,
+          "dashboardText": true
+        }
+      ]
+    },
+    "roleToggles": true,
+    "profileUpdates": true,
+    "contractIrVerificationTeam": true,
+    "scrolling": true,
+    "persistentActions": true
+  },
+  "interactionWiring": {
+    "roleToggle": true,
+    "profileSave": true,
+    "settingsSave": true,
+    "contractIrFieldInspector": true,
+    "contractIrToVerification": true,
+    "verificationToTeam": true,
+    "teamToContractIr": true,
+    "teamToVerification": true,
+    "persistentIdentityState": true,
+    "persistentDraftsAndActions": true,
+    "safeScrolling": true
+  },
+  "personaSwitches": [
+    "owner",
+    "freelancer",
+    "legal_reviewer",
+    "org_admin",
+    "technical_auditor"
+  ],
+  "completedWorkflowSteps": [
+    "Load dashboard",
+    "Switch through all five roles",
+    "Open Contract IR",
+    "Inspect a source field",
+    "Run verification",
+    "Open team review",
+    "Save profile/settings identity wiring",
+    "Check all declared routes"
+  ],
+  "errors": [],
+  "recoveryActions": [
+    "Used route-level HTTP checks and source contract checks; no production data was changed",
+    "Recorded simulated/off-chain boundaries explicitly"
+  ],
+  "finalAgreementState": "Verified demo state; parity, wallet, AI, and email integrations remain explicitly simulated/off-chain",
+  "manualInterventionNeeded": false,
+  "verificationBoundary": "Automated HTTP route smoke test plus source-level interaction wiring audit. This does not claim live wallet, AI provider, email, or browser click E2E confirmation."
+}

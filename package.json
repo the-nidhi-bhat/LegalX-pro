@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node scripts/test-demo.mjs && node scripts/test-rbac.mjs && node scripts/test-resilience.mjs && node scripts/test-workflows.mjs",
-    "rehearse:demo": "node scripts/rehearse-demo.mjs"
+    "rehearse:demo": "node scripts/rehearse-demo.mjs",
+    "rehearse:judge": "node scripts/final-demo-checklist.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
