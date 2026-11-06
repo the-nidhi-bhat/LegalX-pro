@@ -64,7 +64,16 @@ const SHARED_ROLE_ROUTES: Record<Role, readonly string[]> = {
 }
 
 export function hasPermission(role: Role, permission: Permission): boolean { return ROLE_PERMISSIONS[role].includes(permission) }
-export function canAccessRoute(role: Role, path: string): boolean { if (path === '/demo' || path === '/app') return true; const roleOwnsRoute = ROLE_NAV[role].some((item) => item[1] === path) || SHARED_ROLE_ROUTES[role].includes(path); if (!roleOwnsRoute) return false; if (path === '/app/transactions' || path === '/app/smart-contracts') return hasPermission(role, 'escrow:view_financials') || hasPermission(role, 'escrow:fund') || hasPermission(role, 'audit:view'); const required = ROUTE_PERMISSIONS[path]; return !required || hasPermission(role, required) }
+export function canAccessRoute(role: Role, path: string): boolean {
+  if (path === '/demo' || path === '/app') return true
+  const roleOwnsRoute = ROLE_NAV[role].some((item) => item[1] === path) || SHARED_ROLE_ROUTES[role].includes(path)
+  if (!roleOwnsRoute) return false
+  if (path === '/app/transactions' || path === '/app/smart-contracts') return hasPermission(role, 'escrow:view_financials') || hasPermission(role, 'escrow:fund') || hasPermission(role, 'audit:view') || hasPermission(role, 'workspace:manage')
+  if (path === '/app/ai-workspace') return hasPermission(role, 'agreement:create') || hasPermission(role, 'agreement:approve_legal') || hasPermission(role, 'audit:view')
+  if (path === '/app/activity') return hasPermission(role, 'workspace:view_activity') || hasPermission(role, 'milestone:submit')
+  const required = ROUTE_PERMISSIONS[path]
+  return !required || hasPermission(role, required)
+}
 export function permissionsFor(role: Role): readonly Permission[] { return ROLE_PERMISSIONS[role] }
 export function accountForRole(role: Role): DemoAccount { return DEMO_ACCOUNTS.find((account) => account.role === role)! }
 export function roleLabel(role: Role): string { return ROLE_LABELS[role] }
