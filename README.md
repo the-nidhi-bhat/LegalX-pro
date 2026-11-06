@@ -147,3 +147,25 @@ The diagram reflects the product boundary: parity and hashing create technical e
 LEGALX now uses one unified application shell with five permission-aware identities: Agreement Owner, Freelancer / Contractor, Legal Reviewer, Organization Admin, and Technical Auditor. The active identity changes the dashboard metrics, sidebar navigation, permitted actions, financial visibility, and protected route behavior while keeping every role on the same seeded Acme Digital agreement lifecycle.
 
 The demo role switcher is intentionally local-only and clearly labeled. It is useful for judging the connected workflow, not a replacement for production authentication. Every protected route is checked through the centralized policy before its component mounts; unauthorized attempts show a 403-style state. API and database enforcement patterns are documented separately in [RBAC.md](docs/RBAC.md), with server helpers in `server/authorization.ts` and executable negative tests in `scripts/test-rbac.mjs`.
+
+### Role-aware access flow
+
+```mermaid
+flowchart TB
+    U[Authenticated workspace member] --> W{Active workspace membership}
+    W -->|Acme Digital| R{Active role}
+    R --> O[Agreement Owner\ncreate, fund, approve milestones]
+    R --> F[Freelancer / Contractor\nassigned work, evidence, permitted payments]
+    R --> L[Legal Reviewer\nclauses, comments, legal approval]
+    R --> A[Organization Admin\nmembers, roles, integrations, logs]
+    R --> T[Technical Auditor\nread-only IR, parity, hashes, chain evidence]
+    O --> P[Central policy check]
+    F --> P
+    L --> P
+    A --> P
+    T --> P
+    P -->|allowed| D[Scoped data + permitted action]
+    P -->|denied| X[403 state\nno protected component mounted]
+    D --> S[Server/API permission check]
+    S --> Q[Database workspace predicate + RLS]
+```
