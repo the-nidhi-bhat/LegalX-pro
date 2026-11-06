@@ -109,7 +109,7 @@ README setup, architecture, limitations, screenshots, Trust-flow Mermaid, and ro
 
 ## Git and release verification
 
-Canonical project branch: `main`. Latest canonical checkpoint: `9a8373d` (`Document role aware access flow`). Latest GitHub mirror commit: `5c9bcff` (`Document role aware access flow`). No force push was used. The working tree was clean after the release push.
+Canonical project branch: `main`. Latest canonical checkpoint: `fc2c1b9` (`Harden RBAC and publish acceptance audit`). Latest GitHub mirror commit: `09086cb` (`Harden RBAC and publish acceptance audit`). No force push was used. The working tree was clean after the release push.
 
 ## Three strongest verified features
 
