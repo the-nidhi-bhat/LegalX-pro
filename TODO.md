@@ -58,3 +58,12 @@
 - [x] Realistic local-only demo accounts exist for owner@legalx.demo, freelancer@legalx.demo, lawyer@legalx.demo, admin@legalx.demo, and auditor@legalx.demo without production credentials.
 - [x] Role-aware onboarding explains the shared agreement lifecycle and selects the initial responsibility before entering the workspace.
 - [x] RBAC regression tests cover allowed actions, denied actions, admin separation from legal/escrow authority, auditor read-only boundaries, and cross-workspace API policy expectations.
+
+## 12. Final acceptance audit and security hardening
+- [x] Audited all declared public, onboarding, authenticated, and agreement-detail routes plus the shared shell, RBAC policy, server helper, tests, documentation, and release configuration.
+- [x] Replaced permissive unknown `/app/*` fallback behavior with explicit role route allowlists; protected settings and agreement detail are now role-scoped.
+- [x] Added owner/assignee resource scope checks to server authorization and restricted agreement edits to the resource owner.
+- [x] Applied financial masking to milestone and agreement-detail amounts for roles without financial visibility.
+- [x] Added regression assertions for unknown-route denial, admin detail denial, auditor settings denial, protected detail access, and financial boundaries.
+- [x] Created `docs/FINAL_ACCEPTANCE_AUDIT.md` with exact command evidence, feature statuses, defects, repairs, integration blockers, security findings, and conditional release recommendation.
+- [x] Reviewed README Mermaid trust-flow and role-access diagrams and linked the final audit from the documentation index.

@@ -9,6 +9,14 @@ const permissions = {
 }
 const can = (role, permission) => permissions[role].has(permission)
 const canReadResource = (role, contextWorkspace, resourceWorkspace) => contextWorkspace === resourceWorkspace && can(role, 'agreement:view')
+const roleRoutes = {
+  owner: new Set(['/app', '/app/agreements', '/app/ai-workspace', '/app/contract-ir', '/app/parity', '/app/smart-contracts', '/app/milestones', '/app/agreements/website-project', '/app/team', '/app/notifications', '/app/settings', '/app/profile']),
+  freelancer: new Set(['/app', '/app/agreements', '/app/milestones', '/app/activity', '/app/transactions', '/app/help', '/app/notifications', '/app/profile', '/app/agreements/website-project']),
+  legal_reviewer: new Set(['/app', '/app/agreements', '/app/agreements/website-project', '/app/ai-workspace', '/app/contract-ir', '/app/parity', '/app/notifications']),
+  org_admin: new Set(['/app', '/app/team', '/app/settings', '/app/agreements', '/app/activity', '/app/smart-contracts', '/app/help']),
+  technical_auditor: new Set(['/app', '/app/agreements', '/app/contract-ir', '/app/parity', '/app/agreements/website-project', '/app/smart-contracts', '/app/transactions', '/app/activity']),
+}
+const canAccessRoute = (role, path) => roleRoutes[role].has(path) && (!['/app/settings'].includes(path) || can(role, 'workspace:manage') || role === 'owner')
 assert.equal(can('owner', 'agreement:create'), true)
 assert.equal(can('owner', 'escrow:fund'), true)
 assert.equal(can('freelancer', 'agreement:create'), false)
@@ -25,4 +33,11 @@ assert.equal(can('technical_auditor', 'escrow:fund'), false)
 assert.equal(canReadResource('owner', 'acme-digital', 'acme-digital'), true)
 assert.equal(canReadResource('owner', 'acme-digital', 'lexora-studio'), false)
 assert.equal(canReadResource('technical_auditor', 'acme-digital', 'lexora-studio'), false)
+assert.equal(canAccessRoute('owner', '/app/settings'), true)
+assert.equal(canAccessRoute('org_admin', '/app/settings'), true)
+assert.equal(canAccessRoute('technical_auditor', '/app/settings'), false)
+assert.equal(canAccessRoute('org_admin', '/app/unknown-sensitive-route'), false)
+assert.equal(canAccessRoute('freelancer', '/app/agreements/website-project'), true)
+assert.equal(canAccessRoute('org_admin', '/app/agreements/website-project'), false)
+assert.equal(can('technical_auditor', 'escrow:view_financials'), false)
 console.log('rbac checks passed: five roles, allowed actions, and unauthorized attempts covered')
