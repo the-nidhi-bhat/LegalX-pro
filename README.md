@@ -96,3 +96,46 @@ No license is asserted in this prototype repository. Confirm the intended licens
 ![LEGALX parity verification studio](docs/screenshots/parity-studio.png)
 
 ![LEGALX AI workspace](docs/screenshots/ai-workspace.png)
+
+## Trust-flow architecture
+
+```mermaid
+flowchart LR
+    A[Plain language agreement] --> B[AI clarification layer]
+    B --> C[Canonical Contract IR]
+    C --> D[Readable legal agreement]
+    C --> E[Supported escrow parameters]
+    D --> F[Parity Verification Studio]
+    E --> F
+    F -->|critical mismatch| G[Execution blocked]
+    F -->|all supported terms match| H[Human approval gate]
+    H --> I[Simulated / configured wallet action]
+    I --> J[Milestones and activity evidence]
+
+    subgraph Trust Passport
+      K[Agreement version]
+      L[Canonical hash]
+      M[IR version]
+      N[Engine version]
+      O[Approval evidence]
+      P[Transaction reference when real]
+    end
+    C -. evidence .-> K
+    C -. evidence .-> L
+    F -. evidence .-> M
+    F -. evidence .-> N
+    H -. evidence .-> O
+    I -. evidence .-> P
+```
+
+The diagram reflects the product boundary: parity and hashing create technical evidence, not legal enforceability.
+
+### Interaction proof
+
+![Transactions with live search and CSV export](docs/screenshots/transactions.png)
+
+![Notifications with mark-all-read state](docs/screenshots/notifications.png)
+
+![Profile and account safety surface](docs/screenshots/profile.png)
+
+![Mobile transaction view](docs/screenshots/transactions-mobile.png)
